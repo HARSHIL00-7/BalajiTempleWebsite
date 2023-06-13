@@ -1,59 +1,133 @@
-.form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px dotted black;
-    padding: 20px;
-    width: 80%; /* Change fixed width to 100% */
-    max-width: 1200px; 
-    margin: 0 auto;
-  }
-  
-  .columns-container {
-    display: flex;
-    justify-content:flex-start; 
-    width: 100%;
-  }
-  
-  .column {
-    flex: 1;
-    padding: 10px;
-    position: relative;
-  }
-  
-  .row {
-    margin-bottom: 10px;
-  }
-  
-  .empty-space {
-    height: 80px;
-  }
-  
-  h1 {
-    margin-top: 0;
-  }
-  
-  h2 {
-    margin-top: 20px;
-  }
-  
-  /* Positioning the second and third column labels */
-  .column:nth-child(n + 2) .row:first-child label {
-    position: absolute;
-    top: -30px;
-    left: 0;
-  }
-  
-  .requiredfield {
-    color: red;
-  }
-  
-  
+.user-form2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  box-sizing: border-box;
+  height: 80%;
 
-  @media (max-width: 760px) {
-    .form-container {
-      padding: 10px; /* Adjust padding for smaller screens */
-    }
-  }
-  
-  
+}
+
+tr:first-child th {
+  border-bottom: 1px dotted black;
+  background-color: transparent;
+}
+
+
+.user-form1 h2 {
+  color: red;
+}
+
+.table-header {
+  display: flex;
+  align-items: center;
+}
+
+.table-header h3 {
+  margin-right: auto;
+}
+
+.add-user-button {
+  margin-left: auto;
+}
+
+table {
+  padding: 2px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  overflow: auto;
+  border: 1px dotted black;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #cec8c87a;
+}
+tbody tr:nth-child(even) {
+  background-color: #cec8c87a;
+}
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+tbody::after {
+  content: "";
+  display: block;
+  height: 10px;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+}
+
+
+.form-container1 input,
+.form-container1 select
+{
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 100%;
+}
+
+
+.form-buttons-container1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 10px;
+
+}
+
+
+.form-submit-button1,
+.back-button {
+  flex: 1;
+  margin-right: 5px;
+  padding: 8px 30px;
+  border: none;
+  cursor: pointer;
+  background-color: maroon;
+  color: white;
+  border-radius: 10px;
+
+}
+
+
+.form-submit-button1:hover,
+.back-button:hover{
+
+  text-decoration: underline;
+
+}
+
+.form-container1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px dotted black;
+  width: 70%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  height: fit-content;
+  overflow:auto;
+}
+.columns-container1 {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.column1 {
+  flex: 1;
+  padding: 40px;
+  position: relative;
+  margin-left: 10px;
+}

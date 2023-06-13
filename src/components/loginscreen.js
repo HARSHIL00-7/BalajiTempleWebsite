@@ -22,6 +22,7 @@ const Login = ({ setLoggedIn }) => {
   }, []);
 
   const handleSubmit = (e) => {
+
     e.preventDefault();
     // Perform username and password validation
     const isValid = validateCredentials(username, password); // Replace with your validation logic
@@ -51,10 +52,10 @@ const Login = ({ setLoggedIn }) => {
       alert('Please solve the reCAPTCHA.');
       return;
     }
-
+    
     if (isValid && isCaptchaSolved) {
       setLoggedIn(true);
-      navigate('/landing');
+      navigate('/Landing/Home');
     } else {
       setLoggedIn(false);
     }

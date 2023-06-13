@@ -1,72 +1,184 @@
+.registration-form1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  height: 100%;
+
+}
+
 .form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px dotted black;
-    padding: 20px;
-    width: 80%; /* Change fixed width to 100% */
-    max-width: 1200px; 
-    margin: 0 auto;
-  }
-  
-  .columns-container {
-    display: flex;
-    justify-content:flex-start; 
-    width: 100%;
-  }
-  
-  .column {
-    flex: 1;
-    padding: 10px;
-    position: relative;
-  }
-  
-  .row {
-    margin-bottom: 10px;
-  }
-  
-  .empty-space {
-    height: 80px;
-  }
-  
-  h1 {
-    margin-top: 0;
-  }
-  
-  h2 {
-    margin-top: 20px;
-  }
-  
-  /* Positioning the second and third column labels */
-  .column:nth-child(n + 2) .row:first-child label {
-    position: absolute;
-    top: -30px;
-    left: 0;
-  }
-  
-  .requiredfield {
-    color: red;
-  }
-  
-  select,
-  input[type="text"] {
-    display: flex;
-    height: 40px;
-    width: 100%; /* Change width to 100% */
-    max-width: 70%;
-    margin-top: 10px;
-    background-color: white;
-    border: 1px solid black;
-    padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px dotted black;
+  width: 80%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  height: fit-content;
+  overflow:auto;
+}
+
+.columns-container {
+  display: flex;
+ 
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.column {
+  flex: 1;
+  padding: 10px;
+  position: relative;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.row label{
+  white-space: pre-wrap;
+  text-align: left;
+}
+
+.row select,
+.row input {
+  align-self: flex-start;
+  width: 75%; /* Increase width to 100% */
+  padding: 8px; /* Add padding for a modern UI appearance */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  /* Add border for a visible separation */
+  font-size: 16px; /* Set font size for better readability */
+  box-sizing: border-box; /* Include padding and border in the total width */
+  background-color: white;
+  border: 1px solid black;
+}
+
+.empty-space {
+  height: 8.5vh;
+}
+
+.form-heading1{
+  color: rgb(211, 29, 29);
+}
+
+.column p{
+  margin-top: 20px;
+  text-align: left;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.requiredfield {
+  color: red;
+}
+
+@media (max-width: 1000px) {
+  .registration-form {
+    width: 80%;
+    overflow: auto;
   }
 
-  @media (max-width: 760px) {
-    .form-container {
-      padding: 10px; /* Adjust padding for smaller screens */
-    }
-  
-    select,
-    input[type="text"] {
-      max-width: 100%; /* Adjust max-width for smaller screens */
-    }
+  .form-container {
+    border: 1px dotted black;
+    padding: 10px;
+    width: 100%;
+    align-items: flex-start;
+    overflow: auto;
   }
+
+  .columns-container {
+    display: flex;
+    overflow: auto;
+  }
+}
+@media (max-width: 768px) {
+  .registration-form {
+    width: 80%;
+    overflow: auto;
+  }
+
+  .form-container {
+    border: 1px dotted black;
+    padding: 10px;
+    width: 100%;
+    align-items: flex-start;
+    overflow: auto;
+  }
+
+  .columns-container {
+    display: flex;
+    overflow: auto;
+  }
+
+  .empty-space {
+    height: 14vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .registration-form {
+    width: 80%;
+    overflow: auto;
+  }
+
+  .form-container {
+    border: 1px dotted black;
+    width: 100%;
+    align-items: flex-start;
+    overflow: auto;
+  }
+
+  .columns-container {
+    display: flex;
+    overflow: auto;
+  }
+
+  .empty-space {
+    height: 23vh;
+  }
+}
+.form-buttons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.form-submit-button,
+.clear-button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  background-color: maroon;
+  color: white;
+  border-radius: 10px;
+
+}
+
+
+.form-submit-button:hover,
+.clear-button:hover{
+
+  text-decoration: underline;
+
+}
+
+
+
+.file-input-label {
+
+  white-space: pre-wrap;
+  text-align: left;
+  
+  cursor: pointer;
+}
+
+.file-input-label input[type="file"] {
+  display: none;
+}

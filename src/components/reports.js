@@ -1,107 +1,163 @@
-import React, { useState } from 'react';
+import React, { useState,useRef } from 'react';
 import './reports.css';
 
-const Report = () => {
-  const [requestDate, setRequestDate] = useState(new Date().toLocaleDateString());
-  const [district, setDistrict] = useState('');
-  const [assemblyConstituency, setAssemblyConstituency] = useState('');
-  const [mandal, setMandal] = useState('');
-
+const Reports = () => {
+    const [requestDate] = useState(new Date().toLocaleDateString());
+ 
   const handleFormSubmit = (e) => {
     e.preventDefault();
     // Perform form submission logic here
   };
-
+ 
+  const handleClear = () =>  {
+    const inputs = document.querySelectorAll('input, select');
+  
+    inputs.forEach((input) => {
+      if (input.type !== 'submit' && input.type !== 'button') {
+        input.value = '';
+      }
+    });
+  }
+  
   return (
-<div className="registration-form">
-<h2 className="form-heading">Registration Form</h2>
-<div className="form-box">
-<div className="form-row1">
-<p className="form-line">Request Type: Bhajana Mindaralu</p>
-<p className="form-line" style={{ marginLeft: "3%"}}>Request Date: {requestDate}</p>
-<p className="form-line" style={{ marginLeft: "7.2%"}}>State:Andhra Pradesh</p>
-</div>
-  <div className="form-row">
-    <div className="form-column">
-      <div className="form-row">
-        <label htmlFor="phases">
-          Phases:<span className="required-field">*</span>
+<div className="report-form1">
+<h1 className="heading">Reports</h1>
+   <form  className="form-container" onSubmit={handleFormSubmit}>
+      <div className="columns-container">
+        <div className="column">
+          <div className="row">
+          <label htmlFor="phases">
+          Phases:<span className="requiredfield">*</span>
         </label>
         </div>
-        <div className="form-row">
+        <div className="row">
         <select id="phases" required>
-          <option value="">Select Phase</option>
+          <option value="">0 options selected</option>
           <option value="Phase 1">Phase 1</option>
           <option value="Phase 2">Phase 2</option>
           <option value="Phase 3">Phase 3</option>
         </select>
       </div>
-      <div className="form-row">
-        <label htmlFor="district">
-          Name of the District:<span className="required-field">*</span>
-        </label>
-        </div>
-         <div className="form-row">
-        <select id="district" required onChange={(e) => setDistrict(e.target.value)}>
-          <option value="">Select District</option>
-          <option value="District 1">District 1</option>
-          <option value="District 2">District 2</option>
-          <option value="District 3">District 3</option>
+          <div className="row">
+            <label htmlFor="district">Name of the district<span className="required-field">*</span></label>
+          </div>
+          <div className="row">
+          <select id="district" required>
+          <option value="">0 options selected</option>
+          <option value="Phase 1">Phase 1</option>
+          <option value="Phase 2">Phase 2</option>
+          <option value="Phase 3">Phase 3</option>
         </select>
+          </div>
+          <div className="row">
+            <label htmlFor="village">Name of the Village<span className="required-field">*</span></label>
+          </div>
+          <div className="row">
+          <input
+            type="text"
+            id="village"
+            required />
+          </div>
+        </div>
+        <div className="column">
+          <div className="row">
+            <label htmlFor="assembly">Name of the Assembly Constituency<span className="required-field">*</span></label>
+          </div>
+          <div className="row">
+          <input
+            type="text"
+            id="assembly" required/>
+          </div>
+          <div className="row">
+            <label htmlFor="Colony">Name of the Hamlet,Colony<span className="required-field">*</span></label>
+          </div>
+          <div className="row">
+          <input
+            type="text"
+            id="Colony" required/>
+          </div>
+          <div className="row">
+            <label htmlFor="Population">Population of the Village/ Hamlet/<br />Colony<span className="required-field">*</span></label>
+          </div>
+          <div className="row">
+          <input
+            type="text"
+            id="Population" required/>
+          </div>
+        </div>
+        <div className="column">  
+          <div className="row">
+            <label htmlFor="mandal">Name of the Mandal<span className="required-field">*</span></label>
+          </div>
+          <div className="row">
+            <select id="mandal" required >
+              <option value="mandal1">0 options selected</option>
+              <option value="mandal2">District 2</option>
+              <option value="mandal3">District 3</option>
+            </select>
+          </div>
+          <div className="row">
+            <label htmlFor="latitude">Latitude of the location</label>
+          </div>
+          <div className="row">
+          <input
+            type="text"
+            id="latitude" />
+          </div>
+          <div className="row">
+            <label htmlFor="Colony">Specify if the proposed location is SC/ST/Fisherman colony<span className="required-field">*</span></label>
+          </div>
+          <div className="row">
+            <select id="Colony" required>
+            <option value="Colonydefault">0 options selected</option>
+              <option value="Colonyyes">Yes </option>
+              <option value="Colonyno">No</option>
+            </select>
+          </div>
+        </div>
+        <div className="column">
+          <div className="row">
+            <label htmlFor="mandal">Name of the Mandal<span className="required-field">*</span></label>
+          </div>
+          <div className="row">
+            <select id="mandal" required >
+              <option value="mandal1">0 options selected</option>
+              <option value="mandal2">District 2</option>
+              <option value="mandal3">District 3</option>
+            </select>
+          </div>
+          <div className="row">
+            <label htmlFor="latitude">Latitude of the location</label>
+          </div>
+          <div className="row">
+          <input
+            type="text"
+            id="latitude" />
+          </div>
+          <div className="row">
+            <label htmlFor="Colony">Specify if the proposed location is SC/ST/Fisherman colony<span className="required-field">*</span></label>
+          </div>
+          <div className="row">
+            <select id="Colony" required>
+            <option value="Colonydefault">0 options selected</option>
+              <option value="Colonyyes">Yes </option>
+              <option value="Colonyno">No</option>
+            </select>
+          </div>
+        </div>
       </div>
+      <div class="form-buttons-container">
+      <button class="form-submit-button" type="submit">Submit</button>
+      <button class="clear-button" onClick={handleClear}>Clear</button>
+      <img src={process.env.PUBLIC_URL + '/assets/pdficon.png'} alt="pdf" />
     </div>
-    <div className="form-column">
-    <div className="form-row">
-        <label htmlFor="district">
-          Name of the District:<span className="required-field">*</span>
-        </label>
-        </div>
-        <div className="form-row">
-        <select id="district" required onChange={(e) => setDistrict(e.target.value)}>
-          <option value="">Select District</option>
-          <option value="District 1">District 1</option>
-          <option value="District 2">District 2</option>
-          <option value="District 3">District 3</option>
-        </select>
-      </div>
-      <div className="form-row">
-        <label htmlFor="district">
-          Name of the District:<span className="required-field">*</span>
-        </label>
-        </div>
-        <div className="form-row">
-        <select id="district" required onChange={(e) => setDistrict(e.target.value)}>
-          <option value="">Select District</option>
-          <option value="District 1">District 1</option>
-          <option value="District 2">District 2</option>
-          <option value="District 3">District 3</option>
-        </select>
-      </div>
+    <div className="box">
+        <h2>Generated Report</h2>
+        <img src={process.env.PUBLIC_URL + '/assets/pdficon.png'} alt="pdf" />
     </div>
-    <div className="form-column">
-   
-    <div className="form-row">
-        <label htmlFor="district">
-          Name of the District:<span className="required-field">*</span>
-        </label>
-        </div>
-        <div className="form-row">
-        <select id="district" required onChange={(e) => setDistrict(e.target.value)}>
-          <option value="">Select District</option>
-          <option value="District 1">District 1</option>
-          <option value="District 2">District 2</option>
-          <option value="District 3">District 3</option>
-        </select>
-      </div>
-  </div>
-  
-</div>
-<button type="submit" onClick={handleFormSubmit}>
-    Submit
-  </button>
-</div>
-</div>
+      </form>
+    </div>
   );
 };
 
-export default Report;
+export default Reports;

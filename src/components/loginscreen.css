@@ -14,7 +14,6 @@ html, body {
 
 .login-box {
   display: flex;
-  flex-direction: row;
   background-color: #fff;
   border-radius: 4%;
   max-width: 500px;
@@ -24,29 +23,35 @@ html, body {
 }
 
 .image-container {
-  flex: 30%;
+  flex: 40%;
   display: flex;
-  overflow: hidden;
+  align-items: center;
+  justify-content: center;
   border-top-left-radius: 4%;
   border-bottom-left-radius: 4%;
+  overflow: hidden; /* Add overflow: hidden to ensure the image fits inside */
 }
 
 .image-container img {
-  max-width: 100%;
-  height: auto;
+  width: 100%; /* Set width to 100% */
+  height: 100%; /* Set height to 100% */
   object-fit: cover;
   border-top-left-radius: 4%;
   border-bottom-left-radius: 4%;
 }
 
+
 .details-container {
-  flex: 70%;
+  flex: 60%;
   padding: 20px;
   background-color: #fff;
   display: flex;
   flex-direction: column;
   border-radius: 4%;
 }
+
+/* Rest of the CSS remains the same */
+
 
 .login-heading {
   color: red;
@@ -102,6 +107,7 @@ input[type="password"] {
 
 @media screen and (max-width: 768px) {
   .login-box {
+   
     width: 100%;
     margin-top: 5%;
     margin-bottom: 5%;

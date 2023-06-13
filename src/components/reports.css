@@ -1,65 +1,226 @@
-.registration-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 10px;
-    margin-top: 0px;
+.report-form1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  box-sizing: border-box;
+  height: 100%;
+
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px dotted black;
+  width: 70%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  height: fit-content;
+  overflow:auto;
+}
+
+.columns-container {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.column {
+  flex: 1;
+  padding: 5px;
+  position: relative;
+  margin-left: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.row label{
+  white-space: pre-wrap;
+  text-align: left;
+}
+
+.row select,
+.row input {
+  align-self: flex-start;
+  width: 75%; /* Increase width to 100% */
+  padding: 8px; /* Add padding for a modern UI appearance */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  /* Add border for a visible separation */
+  font-size: 16px; /* Set font size for better readability */
+  box-sizing: border-box; /* Include padding and border in the total width */
+  background-color: white;
+  border: 1px solid black;
+}
+
+
+
+.heading{
+  color: rgb(211, 29, 29);
+}
+
+.column p{
+  margin-top: 20px;
+  text-align: left;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.required-field {
+  color: red;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  background-color: rgba(128, 128, 128, 0.3);
+  padding: 10px;
+  border-radius: 5px;
+  width: 95%;
+  margin-bottom: 10px;
+}
+.box h2 {
+  font-size: 24px;
+  margin: 0;
+  order: 1;
+}
+
+.box img {
+  height: 50px;
+  width: 50px;
+  margin-left: auto;
+  margin-right: 10px;
+  order: 2;
+}
+
+.form-buttons-container img {
+  display: none;
+  height: 50px;
+  width: 50px;
+  margin-left: 10px;
+  margin-right: 0;
+  order: 2;
+}
+@media (max-width: 900px) {
+  .registration-form {
+    width: 80%;
+    overflow: auto;
   }
-  
-  .form-heading {
-    color: red;
-  }
-  
-  .form-box {
+
+  .form-container {
     border: 1px dotted black;
-    padding: 20px;
-  
-    width: 1300px;
+    padding: 10px;
+    width: 100%;
     align-items: flex-start;
-  }
-  .form-line{
-    justify-content: center;
+    overflow: auto;
+    
   }
 
-  .form-row {
+  .columns-container {
     display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+    overflow: auto;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; 
   }
-  
-  .form-row1{
-    display: flex;
-    justify-items: flex-start;
-    margin-bottom: 10px;
-    margin-top: auto;
+
+  .box {
+    display: none;
   }
-  .form-column {
+  .column {
     flex: 1;
+    padding: 5px;
+    position: relative;
+    margin-left: 20px;
+  }
+  .form-buttons-container img {
+    display: inline-block;
+  }
+  .form-submit-button,
+.clear-button {
+  flex: 1;
+  margin-right: 5px;
+  padding: 2px 10px;
+  border: none;
+  cursor: pointer;
+  background-color: maroon;
+  color: white;
+  border-radius: 10px;
+
+}
+
+}
+
+
+@media (max-width: 500px) {
+
+  .form-container {
+   height: fit-content;
+    border: 1px dotted black;
+    width: 100%;
+    align-items: flex-start;
+    overflow: auto;
+  }
+
+  .columns-container {
+
     display: flex;
-    flex-direction: column;
-    margin-right: 40px;
+    overflow: auto;
   }
-  
-  .form-field {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  label {
-    font-weight: bold;
-    margin-right: 10px;
-    flex-shrink: 0;
-  }
-  
-  .required-field {
-    color: red;
-  }
-  
+
+.box{
+  display: none;
+}
+.form-buttons-container img {
+  display: inline-block;
+}
 
   
-  button {
- display: flex;
-    margin-top: 10px;
-  }
+}
+
+.form-buttons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 10px;
+
+}
+
+.form-submit-button,
+.clear-button {
+  flex: 1;
+  margin-right: 5px;
+  padding: 8px 30px;
+  border: none;
+  cursor: pointer;
+  background-color: maroon;
+  color: white;
+  border-radius: 10px;
+
+}
+
+
+.form-submit-button:hover,
+.clear-button:hover{
+
+  text-decoration: underline;
+
+}
+
+
+
+.file-input-label {
+
+  white-space: pre-wrap;
+  text-align: left;
   
+  cursor: pointer;
+}
+
+.file-input-label input[type="file"] {
+  display: none;
+}
+
