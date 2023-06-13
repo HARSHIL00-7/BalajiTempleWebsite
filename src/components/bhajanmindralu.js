@@ -162,7 +162,7 @@ const Users = () => {
             id="Colony" required/>
           </div>
           <div className="row">
-            <label htmlFor="Population">Population of the Village/ Hamlet/<br />Colony<span className="required-field">*</span></label>
+            <label htmlFor="Population">Population of the Village/ HamletColony<span className="required-field">*</span></label>
           </div>
           <div className="row">
           <input
@@ -178,7 +178,7 @@ const Users = () => {
             id="Nametemple" required/>
           </div>
           <div className="row">
-            <label className="file-input-label" htmlFor="document">Document of requestee<br />(jpg/jpeg/pdf/png)<span className="required-field">*</span></label>
+            <label className="file-input-label" htmlFor="document">Document of requeste(jpg/jpeg/pdf/png)<span className="required-field">*</span></label>
           </div>
           <div className="row">
           <input

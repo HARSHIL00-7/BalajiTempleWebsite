@@ -10,138 +10,134 @@ const Reports = () => {
   };
  
   const handleClear = () =>  {
-    const inputs = document.querySelectorAll('input, select');
-  
-    inputs.forEach((input) => {
-      if (input.type !== 'submit' && input.type !== 'button') {
-        input.value = '';
-      }
-    });
+    document.getElementById('report-form').reset();
   }
   
   return (
 <div className="report-form1">
 <h1 className="heading">Reports</h1>
-   <form  className="form-container" onSubmit={handleFormSubmit}>
+   <form  className="form-container" onSubmit={handleFormSubmit} id="report-form">
       <div className="columns-container">
         <div className="column">
           <div className="row">
-          <label htmlFor="phases">
-          Phases:<span className="requiredfield">*</span>
-        </label>
+          <label htmlFor="dis">
+          District:</label>
         </div>
         <div className="row">
-        <select id="phases" required>
+        <select id="dis" >
           <option value="">0 options selected</option>
-          <option value="Phase 1">Phase 1</option>
-          <option value="Phase 2">Phase 2</option>
-          <option value="Phase 3">Phase 3</option>
+          <option value="dis 1">District 1</option>
+          <option value="dis 2">District 2</option>
+          <option value="dis 3">District 3</option>
         </select>
       </div>
           <div className="row">
-            <label htmlFor="district">Name of the district<span className="required-field">*</span></label>
+            <label htmlFor="assemblyc">Name of the Assembly Constituency</label>
           </div>
           <div className="row">
-          <select id="district" required>
+          <select id="assemblyc" >
           <option value="">0 options selected</option>
-          <option value="Phase 1">Phase 1</option>
-          <option value="Phase 2">Phase 2</option>
-          <option value="Phase 3">Phase 3</option>
+          <option value="assemblyc 1">Constituency 1</option>
+          <option value="assemblyc 2">Constituency 2</option>
+          <option value="assemblyc 3">Constituency 3</option>
         </select>
           </div>
           <div className="row">
-            <label htmlFor="village">Name of the Village<span className="required-field">*</span></label>
+            <label htmlFor="sdate">Start Date</label>
           </div>
           <div className="row">
           <input
-            type="text"
-            id="village"
-            required />
+            type="date"
+            id="sdate"
+             />
           </div>
         </div>
         <div className="column">
           <div className="row">
-            <label htmlFor="assembly">Name of the Assembly Constituency<span className="required-field">*</span></label>
+            <label htmlFor="mandal1">Mandal</label>
+          </div>
+          <div className="row">
+          <select id="mandal1" >
+          <option value="">0 options selected</option>
+          <option value="mandal 1">mandal 1</option>
+          <option value="mandal 2">mandal 2</option>
+          <option value="mandal 3">mandal 3</option>
+        </select>
+          </div>
+          <div className="row">
+            <label htmlFor="colony">Colony</label>
+          </div>
+          <div className="row">
+          <select id="colony" >
+          <option value="">0 options selected</option>
+          <option value="colony 1">colony 1</option>
+          <option value="colony 2">colony 2</option>
+          <option value="colony 3">colony 3</option>
+        </select>
+          </div>
+          <div className="row">
+            <label htmlFor="enddate">End Date</label>
           </div>
           <div className="row">
           <input
-            type="text"
-            id="assembly" required/>
-          </div>
-          <div className="row">
-            <label htmlFor="Colony">Name of the Hamlet,Colony<span className="required-field">*</span></label>
-          </div>
-          <div className="row">
-          <input
-            type="text"
-            id="Colony" required/>
-          </div>
-          <div className="row">
-            <label htmlFor="Population">Population of the Village/ Hamlet/<br />Colony<span className="required-field">*</span></label>
-          </div>
-          <div className="row">
-          <input
-            type="text"
-            id="Population" required/>
+            type="date"
+            id="enddate" />
           </div>
         </div>
         <div className="column">  
           <div className="row">
-            <label htmlFor="mandal">Name of the Mandal<span className="required-field">*</span></label>
+            <label htmlFor="panch">Panchayat</label>
           </div>
           <div className="row">
-            <select id="mandal" required >
-              <option value="mandal1">0 options selected</option>
-              <option value="mandal2">District 2</option>
-              <option value="mandal3">District 3</option>
+            <select id="panch"  >
+              <option value="">0 options selected</option>
+              <option value="panch1">Panchayat 1</option>
+              <option value="panch2">Panchayat 2</option>
+              <option value="panch3">Panchayat 3</option>
             </select>
           </div>
           <div className="row">
-            <label htmlFor="latitude">Latitude of the location</label>
+            <label htmlFor="ref">Refered</label>
           </div>
           <div className="row">
-          <input
-            type="text"
-            id="latitude" />
+          <select id="ref"  >
+              <option value="">0 options selected</option>
+              <option value="ref 1">Yes</option>
+              <option value="ref 2">No</option>
+            </select>
           </div>
           <div className="row">
-            <label htmlFor="Colony">Specify if the proposed location is SC/ST/Fisherman colony<span className="required-field">*</span></label>
+            <label htmlFor="lColony">Specify if the proposed location is SC/ST/Fisherman colony</label>
           </div>
           <div className="row">
-            <select id="Colony" required>
-            <option value="Colonydefault">0 options selected</option>
-              <option value="Colonyyes">Yes </option>
-              <option value="Colonyno">No</option>
+            <select id="lColony" >
+            <option value="lColonydefault">0 options selected</option>
+              <option value="lColonyyes">Yes </option>
+              <option value="lColonyno">No</option>
             </select>
           </div>
         </div>
         <div className="column">
           <div className="row">
-            <label htmlFor="mandal">Name of the Mandal<span className="required-field">*</span></label>
+            <label htmlFor="ward">Ward</label>
           </div>
           <div className="row">
-            <select id="mandal" required >
-              <option value="mandal1">0 options selected</option>
-              <option value="mandal2">District 2</option>
-              <option value="mandal3">District 3</option>
+          <select id="ward"  >
+              <option value="">0 options selected</option>
+              <option value="ward 1">Ward 1</option>
+              <option value="ward 2">Ward 2</option>
+              <option value="ward 2">Ward 3</option>
             </select>
           </div>
           <div className="row">
-            <label htmlFor="latitude">Latitude of the location</label>
+            <label htmlFor="pha">Phases</label>
           </div>
           <div className="row">
-          <input
-            type="text"
-            id="latitude" />
-          </div>
-          <div className="row">
-            <label htmlFor="Colony">Specify if the proposed location is SC/ST/Fisherman colony<span className="required-field">*</span></label>
-          </div>
-          <div className="row">
-            <select id="Colony" required>
-            <option value="Colonydefault">0 options selected</option>
-              <option value="Colonyyes">Yes </option>
-              <option value="Colonyno">No</option>
+          <select id="pha"  >
+              <option value="">0 options selected</option>
+              <option value="pha 1">Phase 1</option>
+              <option value="pha 2">Phase 2</option>
+              <option value="pha 2">Phase 3</option>
             </select>
           </div>
         </div>
@@ -161,3 +157,5 @@ const Reports = () => {
 };
 
 export default Reports;
+
+
