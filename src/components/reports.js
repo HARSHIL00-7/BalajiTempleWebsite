@@ -6,7 +6,7 @@ const Reports = () => {
  
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    // Perform form submission logic here
+  
   };
  
   const handleClear = () =>  {

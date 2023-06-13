@@ -7,7 +7,7 @@ const Navbar = ({ setActivePage }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleLogout = () => {
-    navigate('/'); // Redirect to the Loginscreen component
+    navigate('/'); 
   };
 
   const handleClick = (page) => {

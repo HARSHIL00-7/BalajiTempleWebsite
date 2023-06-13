@@ -11,7 +11,7 @@ const Login = ({ setLoggedIn }) => {
 
   useEffect(() => {
     const handleWindowBack = () => {
-      navigate('/'); // Redirect to the login screen
+      navigate('/'); 
     };
 
     window.addEventListener('popstate', handleWindowBack);
@@ -24,9 +24,9 @@ const Login = ({ setLoggedIn }) => {
   const handleSubmit = (e) => {
 
     e.preventDefault();
-    // Perform username and password validation
-    const isValid = validateCredentials(username, password); // Replace with your validation logic
-    const isCaptchaSolved = recaptchaRef.current && recaptchaRef.current.getValue() !== ''; // Check if the captcha is solved
+   
+    const isValid = validateCredentials(username, password);
+    const isCaptchaSolved = recaptchaRef.current && recaptchaRef.current.getValue() !== ''; 
 
     if (username === '') {
       alert('Please enter a username.');
@@ -62,17 +62,16 @@ const Login = ({ setLoggedIn }) => {
   };
 
   const validateCredentials = (username, password) => {
-    // Replace with your own validation logic
-    // For demonstration purposes, username is 'admin' and password is 'password'
+
     return username === 'admin' && password === 'password';
   };
 
   const onChange = (value) => {
-    // Handle reCAPTCHA change event
+ 
   };
 
   const resetCaptcha = () => {
-    recaptchaRef.current.reset(); // Reset the reCAPTCHA
+    recaptchaRef.current.reset();
   };
 
   return (

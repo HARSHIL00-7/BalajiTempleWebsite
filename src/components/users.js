@@ -8,6 +8,7 @@ function Users() {
 
   const addUser = (event) => {
     event.preventDefault();
+
     const form = event.target;
     const username = form.elements.username.value;
     const password = form.elements.password.value;
@@ -18,6 +19,7 @@ function Users() {
     const newUser = {
       username: username,
       password: password,
+      cpassword: cpassword,
       email: email,
       phone: phone,
       role: role,
@@ -26,8 +28,6 @@ function Users() {
 
     setUsers([...users, newUser]);
     setShowForm(false);
-
-    // Reset form input values
     form.reset();
   };
 

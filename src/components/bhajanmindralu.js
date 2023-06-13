@@ -6,7 +6,6 @@ const Users = () => {
  
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    // Perform form submission logic here
   };
   const formRef = useRef(null);
 
