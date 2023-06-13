@@ -55,6 +55,7 @@ const Login = ({ setLoggedIn }) => {
     
     if (isValid && isCaptchaSolved) {
       setLoggedIn(true);
+      localStorage.setItem('activePage', 'Home');
       navigate('/Landing/Home');
     } else {
       setLoggedIn(false);
