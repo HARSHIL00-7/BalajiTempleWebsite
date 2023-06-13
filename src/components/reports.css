@@ -47,12 +47,11 @@
 .row select,
 .row input {
   align-self: flex-start;
-  width: 75%; /* Increase width to 100% */
-  padding: 8px; /* Add padding for a modern UI appearance */
-  border-radius: 5px; /* Add border radius for rounded corners */
-  /* Add border for a visible separation */
-  font-size: 16px; /* Set font size for better readability */
-  box-sizing: border-box; /* Include padding and border in the total width */
+  width: 75%;
+  padding: 8px; 
+  border-radius: 5px;
+  font-size: 16px; 
+  box-sizing: border-box; 
   background-color: white;
   border: 1px solid black;
 }

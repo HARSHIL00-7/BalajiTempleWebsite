@@ -18,11 +18,18 @@ tr:first-child th {
 .user-form1 h2 {
   color: red;
 }
-
 .table-header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
+
+.header-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+
 
 .table-header h3 {
   margin-right: auto;
