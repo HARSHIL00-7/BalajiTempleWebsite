@@ -1,3 +1,22 @@
+Screen Shot of the web app pages!
+
+# Frontend
+
+1. Login Screen
+   <img width="1782" alt="image" src="https://github.com/HARSHIL00-7/BalajiTempleWebsite/assets/74018905/a565d2fe-8a01-4a2b-a0e0-7d4e3c375d24">
+   2)Home Screen
+   <img width="1788" alt="image" src="https://github.com/HARSHIL00-7/BalajiTempleWebsite/assets/74018905/6f3b8608-59e1-45af-baeb-039f0c466498">
+2. Bhajana Mandiralu
+   <img width="1787" alt="image" src="https://github.com/HARSHIL00-7/BalajiTempleWebsite/assets/74018905/2fc10db4-85e6-429a-be8b-8b644c25f606">
+   4)User
+   <img width="1773" alt="image" src="https://github.com/HARSHIL00-7/BalajiTempleWebsite/assets/74018905/fe74ed1a-30fa-4df4-84d2-d0d2111a4e21">
+
+3. New User
+   <img width="1768" alt="image" src="https://github.com/HARSHIL00-7/BalajiTempleWebsite/assets/74018905/6cf2c381-c056-41d3-9b40-04fb2ea28706">
+
+4. Reports
+   <img width="1763" alt="image" src="https://github.com/HARSHIL00-7/BalajiTempleWebsite/assets/74018905/ade2fb2b-02d0-47e8-91a4-ea43116269da">
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
