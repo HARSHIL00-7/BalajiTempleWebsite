@@ -1,0 +1,9 @@
+# Ignore node_modules directory
+**/node_modules
+# Ignore package-lock.json file (if present)
+**/package-lock.json
+
+# Ignore package.json file (optional, if you don't want to publish it)
+**/package.json
+
+git rm -r --cached node_modules
