@@ -88,7 +88,7 @@ const Login = ({ setLoggedIn }) => {
   };
 
   const validateUsername = (username) => {
-    const regex = /^[a-zA-Z0-9_\s]{3,20}$/; // Alphanumeric username with 3-20 characters, including spaces
+    const regex = /^[a-zA-Z0-9_\s]{3,20}$/; 
     return regex.test(username);
   };
 
@@ -141,8 +141,8 @@ const Login = ({ setLoggedIn }) => {
            
             
             <div className="buttons-container">
-              {loading ? ( // Conditionally render the spinner if loading state is true
-                <div className="spinner" /> // Replace with your spinner component or CSS class
+              {loading ? ( 
+                <div className="spinner" /> 
               ) : (
                 <>
                   <button type="submit">Submit</button>

@@ -9,8 +9,7 @@ from fastapi import Header
 
 app = FastAPI()
 
-origins = ["http://localhost:3000"]  # Add the origin of your frontend application here
-
+origins = ["http://localhost:3000"]  
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -21,16 +20,16 @@ app.add_middleware(
 
 @app.post("/authenticate")
 async def authenticate_user(credentials: User):
-    # Check if the user exists in the database
+
     user = await collection_users.find_one({"username": credentials.username})
     if not user:
         raise HTTPException(status_code=401, detail="Invalid credentials")
 
-    # Check if the password matches
+
     if user["password"] != credentials.password:
         raise HTTPException(status_code=401, detail="Invalid credentials")
     
-    # Generate JWT token
+
     token = create_access_token(credentials.username)
         
     return {"access_token": token, "token_type": "bearer"}

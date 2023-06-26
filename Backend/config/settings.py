@@ -1,5 +1,5 @@
-# config/settings.py
 
-SECRET_KEY = "xj1Vbyyxt3pbtU2L1vRc_Sowj_4"
+
+SECRET_KEY = "your_secret_key"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 2

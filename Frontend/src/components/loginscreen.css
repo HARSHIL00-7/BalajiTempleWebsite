@@ -107,13 +107,13 @@ input[type="password"] {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Center the spinner */
+  transform: translate(-50%, -50%); 
   width: 40px;
   height: 40px;
   border: 4px solid rgba(255, 255, 255, 0.3);
   border-top-color: #fff;
   border-radius: 50%;
-  animation: spin 1s infinite linear; /* Apply rotation animation */
+  animation: spin 1s infinite linear; 
 }
 
 @keyframes spin {
