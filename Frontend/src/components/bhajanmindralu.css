@@ -1,0 +1,183 @@
+.registration-form1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  height: 100%;
+
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px dotted black;
+  width: 80%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  height: fit-content;
+  overflow:auto;
+}
+
+.columns-container {
+  display: flex;
+ 
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.column {
+  flex: 1;
+  padding: 10px;
+  position: relative;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.row label{
+  white-space: pre-wrap;
+  text-align: left;
+}
+
+.row select,
+.row input {
+  align-self: flex-start;
+  width: 75%; 
+  padding: 8px;
+  border-radius: 5px; 
+  font-size: 16px;
+  box-sizing: border-box; 
+  background-color: white;
+  border: 1px solid black;
+}
+
+.empty-space {
+  height: 8.5vh;
+}
+
+.form-heading1{
+  color: rgb(211, 29, 29);
+}
+
+.column p{
+  margin-top: 20px;
+  text-align: left;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.requiredfield {
+  color: red;
+}
+
+@media (max-width: 1000px) {
+  .registration-form {
+    width: 80%;
+    overflow: auto;
+  }
+
+  .form-container {
+    border: 1px dotted black;
+    padding: 10px;
+    width: 100%;
+    align-items: flex-start;
+    overflow: auto;
+  }
+
+  .columns-container {
+    display: flex;
+    overflow: auto;
+  }
+}
+@media (max-width: 768px) {
+  .registration-form {
+    width: 80%;
+    overflow: auto;
+  }
+
+  .form-container {
+    border: 1px dotted black;
+    padding: 10px;
+    width: 100%;
+    align-items: flex-start;
+    overflow: auto;
+  }
+
+  .columns-container {
+    display: flex;
+    overflow: auto;
+  }
+
+  .empty-space {
+    height: 14vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .registration-form {
+    width: 80%;
+    overflow: auto;
+  }
+
+  .form-container {
+    border: 1px dotted black;
+    width: 100%;
+    align-items: flex-start;
+    overflow: auto;
+  }
+
+  .columns-container {
+    display: flex;
+    overflow: auto;
+  }
+
+  .empty-space {
+    height: 23vh;
+  }
+}
+.form-buttons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.form-submit-button,
+.clear-button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  background-color: maroon;
+  color: white;
+  border-radius: 10px;
+
+}
+
+
+.form-submit-button:hover,
+.clear-button:hover{
+
+  text-decoration: underline;
+
+}
+
+
+
+.file-input-label {
+
+  white-space: pre-wrap;
+  text-align: left;
+  
+  cursor: pointer;
+}
+
+.file-input-label input[type="file"] {
+  display: none;
+}
