@@ -1,0 +1,31 @@
+version: "3"
+services:
+  backend:
+    image: hk007/templewebsite23:b_v1.0.0
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_HOST=mongo
+      - MONGO_PORT=27017
+  frontend:
+    image: hk007/templewebsite23:f_v1.0.0
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    deploy:
+      resources:
+        limits:
+          memory: "16G"
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"

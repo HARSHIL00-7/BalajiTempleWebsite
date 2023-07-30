@@ -1,7 +1,7 @@
 .home-container {
   max-width: 100%;
   padding: 20px;
- 
+ height: 80%;
 }
 
 h1 {
@@ -20,6 +20,23 @@ p {
     max-width: 100%;
     padding: 2px;
     overflow: auto;
+   
+  }
+  h1 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+}
+@media (max-width: 468px) {
+  .home-container {
+    height: 80%;
+    max-width: 100%;
+    padding: 2px;
+
    
   }
   h1 {

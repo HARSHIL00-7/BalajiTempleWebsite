@@ -94,7 +94,7 @@ nav {
   z-index: 999;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 810px) {
   .navbar-logout {
     display: none;
   }

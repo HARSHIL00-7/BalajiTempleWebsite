@@ -1,15 +1,11 @@
-from fastapi import FastAPI, HTTPException, Depends
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from model import User
-from database import collection_users
-from fastapi.security import OAuth2PasswordBearer
-from auth import create_access_token, decode_token
-from datetime import datetime
-from fastapi import Header
+from app.routers import router
 
 app = FastAPI()
 
-origins = ["http://localhost:3000"]  
+origins = ["http://balaj-loadb-1qm23h3izzst6-958b928f2af44c61.elb.us-east-1.amazonaws.com:3000"]
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -18,58 +14,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.post("/authenticate")
-async def authenticate_user(credentials: User):
-
-    user = await collection_users.find_one({"username": credentials.username})
-    if not user:
-        raise HTTPException(status_code=401, detail="Invalid credentials")
+app.include_router(router)
 
 
-    if user["password"] != credentials.password:
-        raise HTTPException(status_code=401, detail="Invalid credentials")
-    
-
-    token = create_access_token(credentials.username)
-        
-    return {"access_token": token, "token_type": "bearer"}
-
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/authenticate")
-
-async def get_token_authorization(authorization: str = Header(...)) -> str:
-    try:
-        scheme, token = authorization.split()
-        if scheme.lower() != "bearer":
-            raise HTTPException(status_code=401, detail="Invalid authentication scheme")
-        return token
-    except ValueError:
-        raise HTTPException(status_code=401, detail="Invalid authorization header")
-
-@app.get("/check_session")
-async def check_session(token: str = Depends(get_token_authorization)):
-    payload = decode_token(token)
-    if payload is None:
-        raise HTTPException(status_code=401, detail="Invalid token")
-    
-    expires = datetime.utcfromtimestamp(payload["exp"])
-    current_time = datetime.utcnow()
-    
-    if current_time > expires:
-        return {"message": "Session has expired"}
-    else:
-        return {"message": "Session is valid"}
-    
-@app.get("/get_current_user")
-async def get_current_user(token: str = Depends(get_token_authorization)):
-    payload = decode_token(token)
-    if payload is None:
-        raise HTTPException(status_code=401, detail="Invalid token")
-    
-    username = payload["sub"]
-    
-    return {"username": username}
-
+@app.get("/")
+async def root():
+    return {"message": "Welcome to BalajiTemple Backend!"}
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="localhost", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
